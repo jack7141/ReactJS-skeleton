@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+* npx create-react-app 이름 --template=typescript
+* 차크라 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
