@@ -1,15 +1,14 @@
 import { Button, Heading, Text, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
-export default function NotFound() {
+export default function NotFound404() {
     return (
-        // VStack : 수직으로 UI 제공
         <VStack bg="gray.100" justifyContent={"center"} minH="100vh">
             <Heading>Page not found.</Heading>
             <Text>It seems that you're lost.</Text>
             <Link to="/">
                 <Button colorScheme={"red"} variant={"link"}>
-                    Go home &rarr;
+                    Go home &rarr;w
                 </Button>
             </Link>
         </VStack>
