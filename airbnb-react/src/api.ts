@@ -1,14 +1,12 @@
 // API Fetch
 import axios from "axios";
-import {useQueryClient} from "@tanstack/react-query";
-
+import Cookie from "js-cookie";
 
 interface ILoginToken{
     email: string
     password: string
 }
 
-// http://127.0.0.1:8000/api/v1/users/profile
 const instance = axios.create({
         baseURL: "http://127.0.0.1:8000/api/v1",
         withCredentials: true
@@ -72,3 +70,16 @@ export async function userLogin({email, password}: ILoginToken) {
     const UserItems = instance.get("/users/profile", {headers: {"Authorization": `Token ${userToken}`},})
     return UserItems;
 }
+
+export const kakaoLogin = (code: string) =>
+    instance
+        .post(
+            `/users/kakao`,
+            { code },
+            {
+                headers: {
+                    "X-CSRFToken": Cookie.get("csrftoken") || "",
+                },
+            }
+        )
+        .then((response) => response.status);

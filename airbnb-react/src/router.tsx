@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./components/Root";
 import Home from "./routes/Home";
-import Users from "./routes/Users";
 import NotFound404 from "./routes/NotFound";
+import KakaoConfirm from "./routes/KakaoConfirm";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
             {
                 path: "",
                 element: <Home />,
+            },
+            {
+                path: "kakao",
+                element: <KakaoConfirm />,
             },
         ],
     },
